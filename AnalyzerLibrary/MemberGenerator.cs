@@ -39,12 +39,19 @@ public class ListMembersAttribute : Attribute
             StringBuilder builder = new(1000);
             builder.Append("// ");
             builder.AppendLine(type.Members);
+            builder.AppendLine();
+            builder.AppendLine($"/// <summary>");
+            builder.AppendLine($"/// <see cref=\"{type.TypeInfo.Type.GetDocumentationCommentId()}\"/>");
+            builder.AppendLine($"/// </summary>");
             builder.Append("internal enum ");
             builder.Append(type.TypeInfo.Type.Name);
             builder.AppendLine("Members");
             builder.AppendLine("{");
             foreach (var member in type.TypeInfo.Type.GetMembers())
             {
+                builder.AppendLine($"    /// <summary>");
+                builder.AppendLine($"    /// <see cref=\"{member.GetDocumentationCommentId()}\"/>");
+                builder.AppendLine($"    /// </summary>");
                 builder.Append("    ");
                 builder.Append(member.Name);
                 builder.AppendLine(",");

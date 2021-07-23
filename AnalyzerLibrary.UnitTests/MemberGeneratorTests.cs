@@ -47,16 +47,47 @@ public class ListMembersAttribute : Attribute
 }
 "),
                         (typeof(MemberGenerator), "__MemberList.Class.generated.cs", @"// Library.Class._privateField;Library.Class._internalField;Library.Class._protectedField;Library.Class.PublicField;Library.Class.PrivateMethod();Library.Class.InternalMethod();Library.Class.ProtectedMethod();Library.Class.PublicMethod();Library.Class.Class()
+
+/// <summary>
+/// <see cref=""T:Library.Class""/>
+/// </summary>
 internal enum ClassMembers
 {
+    /// <summary>
+    /// <see cref=""F:Library.Class._privateField""/>
+    /// </summary>
     _privateField,
+    /// <summary>
+    /// <see cref=""F:Library.Class._internalField""/>
+    /// </summary>
     _internalField,
+    /// <summary>
+    /// <see cref=""F:Library.Class._protectedField""/>
+    /// </summary>
     _protectedField,
+    /// <summary>
+    /// <see cref=""F:Library.Class.PublicField""/>
+    /// </summary>
     PublicField,
+    /// <summary>
+    /// <see cref=""M:Library.Class.PrivateMethod""/>
+    /// </summary>
     PrivateMethod,
+    /// <summary>
+    /// <see cref=""M:Library.Class.InternalMethod""/>
+    /// </summary>
     InternalMethod,
+    /// <summary>
+    /// <see cref=""M:Library.Class.ProtectedMethod""/>
+    /// </summary>
     ProtectedMethod,
+    /// <summary>
+    /// <see cref=""M:Library.Class.PublicMethod""/>
+    /// </summary>
     PublicMethod,{|#0:|}
+    /// <summary>
+    /// <see cref=""M:Library.Class.#ctor""/>
+    /// </summary>
     .ctor,
 }
 "),
